@@ -1,0 +1,17 @@
+name: "Weather Action"
+description: "Get weather"
+inputs:
+  lat:
+    description: "lat"
+    required: true
+    default: "48.137284"
+  long:
+    description: "long"
+    required: true
+    default: "11.575529"
+outputs:
+  weather: # id of output
+    description: "Weather for passed lat/long"
+runs:
+  using: "node12"
+  main: "dist/index.js"
