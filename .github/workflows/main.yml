@@ -1,9 +1,9 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  weather_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to print weather
     steps:
       - name: Weather action step
         id: weather
