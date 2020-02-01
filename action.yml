@@ -10,8 +10,10 @@ inputs:
     required: true
     default: "11.575529"
 outputs:
-  weather: # id of output
-    description: "Weather for passed lat/long"
+  temperature:
+    description: "Temperature for passed lat/long"
+  place:
+    description: "Name of the passed place"
 runs:
   using: "node12"
   main: "dist/index.js"

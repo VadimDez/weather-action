@@ -13,15 +13,13 @@ const request = require("request-promise");
       uri: uri,
       json: true
     });
-    console.log(JSON.stringify(response));
 
-    // core.setOutput("weather", response);
-    core.setOutput("weather", `lat: ${lat}, long: ${long}`);
+    core.setOutput("temperature", response.main.temp);
+    core.setOutput("place", response.name);
     // Get the JSON webhook payload for the event that triggered the workflow
-    // const payload = JSON.stringify(github.context.payload, undefined, 2);
-    // console.log(`The event payload: ${payload}`);
+    const payload = JSON.stringify(github.context.payload, undefined, 2);
+    console.log(`The event payload: ${payload}`);
   } catch (error) {
-    console.log(error);
     core.setFailed(error.message);
   }
 })();

@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Weather action step
         id: weather
-        uses: vadimdez/weather-action@4
+        uses: vadimdez/weather-action@5
         with:
           lat: "52.521737"
           long: "13.413117"
       - name: Get the weather
-        run: echo "The weather is ${{ steps.weather.outputs.weather }}"
+        run: echo "The weather in ${{ steps.weather.outputs.place }} is ${{ steps.weather.outputs.temperature}}°C"
