@@ -13,7 +13,7 @@ const request = require("request-promise");
       uri: uri,
       json: true
     });
-    console.log(response);
+    console.log(JSON.stringify(response));
 
     core.setOutput("weather", response);
     // Get the JSON webhook payload for the event that triggered the workflow
