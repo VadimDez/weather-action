@@ -14,12 +14,12 @@ const request = require("request-promise");
       json: true
     });
 
-    core.setOutput("temperature", response.main.temp);
-    core.setOutput("place", response.name);
+    core.setOutput("temperature", `${ response.main.temp }`);
+    core.setOutput("place", `${ response.name }`);
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2);
     console.log(`The event payload: ${payload}`);
   } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed(error);
   }
 })();
