@@ -2566,8 +2566,6 @@ const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 const request = __webpack_require__(99);
 
-// https://fcc-weather-api.glitch.me/api/current?lat=48.137284&lon=11.575529
-
 (async () => {
   try {
     const lat = core.getInput("lat");
@@ -2579,17 +2577,17 @@ const request = __webpack_require__(99);
       uri: uri,
       json: true
     });
-    console.log(response);
+    console.log(JSON.stringify(response));
 
     core.setOutput("weather", response);
     // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    // const payload = JSON.stringify(github.context.payload, undefined, 2);
+    // console.log(`The event payload: ${payload}`);
   } catch (error) {
+    console.log(error);
     core.setFailed(error.message);
   }
 })();
-
 
 /***/ }),
 /* 105 */,
