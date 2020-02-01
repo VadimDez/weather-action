@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Weather action step
         id: weather
-        uses: vadimdez/weather-action@5
+        uses: vadimdez/weather-action@6
         with:
           lat: "52.521737"
           long: "13.413117"
