@@ -32,3 +32,7 @@ with:
   lat: "52.521737"
   long: "13.413117"
 ```
+
+## License
+
+[MIT](https://tldrlegal.com/license/mit-license) © [Vadym Yatsyuk](https://github.com/vadimdez)
