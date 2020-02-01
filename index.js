@@ -13,8 +13,8 @@ const request = require("request-promise");
       json: true
     });
 
-    core.setOutput("temperature", `${response.main.temp}` || "100");
-    core.setOutput("place", `${response.name}` || "Test");
+    core.setOutput("temperature", `${response.main.temp}`);
+    core.setOutput("place", `${response.name}`);
   } catch (error) {
     core.setFailed(error);
   }
