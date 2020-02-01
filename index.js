@@ -1,5 +1,4 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
 const request = require("request-promise");
 
 (async () => {
@@ -13,13 +12,9 @@ const request = require("request-promise");
       uri: uri,
       json: true
     });
-    console.log(response);
 
-    core.setOutput("temperature", "100" || `${ response.main.temp }`);
-    core.setOutput("place", "Test" || `${ response.name }`);
-    // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    core.setOutput("temperature", `${response.main.temp}` || "100");
+    core.setOutput("place", `${response.name}` || "Test");
   } catch (error) {
     core.setFailed(error);
   }
