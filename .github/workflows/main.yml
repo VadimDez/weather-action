@@ -11,6 +11,5 @@ jobs:
         with:
           lat: "52.521737"
           long: "13.413117"
-      # Use the output from the `hello` step
       - name: Get the weather
-        run: echo "Weather is ${{ steps.hello.outputs.weather }}"
+        run: echo "The weather is ${{ steps.weather.outputs.weather.name }}"
