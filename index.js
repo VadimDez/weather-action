@@ -5,12 +5,18 @@ const request = require("request-promise");
   try {
     const lat = core.getInput("lat");
     const long = core.getInput("long");
+
+    if (lat === "" || long === "") {
+      core.setFailed("No lat or long specified");
+      return;
+    }
+
     console.log(`lat: ${lat}, long: ${long}`);
     const uri = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
     const response = await request({
       uri: uri,
-      json: true
+      json: true,
     });
 
     core.setOutput("temperature", `${response.main.temp}`);
