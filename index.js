@@ -11,12 +11,14 @@ const request = require("request-promise");
       return;
     }
 
-    console.log(`lat: ${lat}, long: ${long}`);
     const uri = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
     const response = await request({
       uri: uri,
       json: true,
+      headers: {
+        'User-Agent': 'Request-Promise'
+      },
     });
 
     core.setOutput("temperature", `${response.main.temp}`);
