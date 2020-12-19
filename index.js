@@ -24,6 +24,7 @@ const request = require("request-promise");
     core.setOutput("temperature", `${response.main.temp}`);
     core.setOutput("place", `${response.name}`);
   } catch (error) {
+    console.log('Error', error);
     core.setFailed(error);
   }
 })();
