@@ -27,7 +27,7 @@ The name of the passed place (extracted from lat/long).
 ## Example usage
 
 ```yaml
-uses: vadimdez/weather-action@9
+uses: vadimdez/weather-action@11
 with:
   lat: "52.521737"
   long: "13.413117"
